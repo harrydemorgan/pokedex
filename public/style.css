@@ -5,7 +5,7 @@ h1 {
 #pokedex {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: flex-start;
     padding: 20px;
 }
 
@@ -24,6 +24,7 @@ h1 {
     border: 1px solid #ccc;
     border-radius: 8px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-right: 20px;
     margin-bottom: 20px;
     padding: 20px;
     box-sizing: border-box;

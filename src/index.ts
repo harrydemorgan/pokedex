@@ -1,5 +1,7 @@
 interface Pokemon {
   name: string;
+  id: number;
+  imageUrl: string;
 }
 
 async function getPokemon(): Promise<Pokemon[]> {
@@ -8,8 +10,9 @@ async function getPokemon(): Promise<Pokemon[]> {
   if (!data || !data.results) {
     throw new Error("No data found") // Throw error if no data found
   }
-  return data.results.map((pokemon: any) => ({
+  return data.results.map((pokemon: any, index: number) => ({
     name: pokemon.name,
+    id: index + 1,
   }));  // return the data in a map so we can load it to the page
 }
 
@@ -24,7 +27,9 @@ function loadPokemon(pokemons: Pokemon[]): void {
     pokemonElement.innerText = pokemon.name;
     pokemonElement.classList.add("pokemon"); // add a class to the element so they can be styled
     pokemonElement.innerHTML = `
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" class="pokemon-sprite" alt="${pokemon.name}" />
       <div class="pokemon-name">${pokemon.name}</div>
+      <div class="pokemon-id">${pokemon.id}</div>
     `;
     pokedex.appendChild(pokemonElement);
   });

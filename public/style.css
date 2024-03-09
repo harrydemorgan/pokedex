@@ -28,3 +28,12 @@ h1 {
 .pokemon-name {
     text-align: center;
 }
+
+.pokemon-id {
+    text-align: center;
+}
+
+.pokemon-sprite {
+    display: block;
+    margin: 0 auto;
+}

@@ -1,0 +1,30 @@
+h1 {
+    text-align: center;
+}
+
+#pokedex {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.pokemon {
+    width: calc(25% - 20px);
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    padding: 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease-in-out;
+}
+
+.pokemon:hover {
+    transform: translateY(-5px);
+}
+
+.pokemon-name {
+    text-align: center;
+}

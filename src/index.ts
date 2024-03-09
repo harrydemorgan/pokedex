@@ -22,6 +22,8 @@ function loadPokemon(pokemons: Pokemon[]): void {
     return;
   }
 
+  pokedex.innerHTML = ""; // clear the pokedex before loading new pokemon
+
   pokemons.forEach((pokemon) => {
     const pokemonElement = document.createElement("pokemonElement"); // create a new element for each pokemon
     pokemonElement.innerText = pokemon.name;
@@ -38,6 +40,14 @@ function loadPokemon(pokemons: Pokemon[]): void {
 async function main() {
   const pokemons = await getPokemon(); // fetch pokemon from api
   loadPokemon(pokemons); // load pokemon to the page
+
+  const searchInput = document.getElementById('searchInput') as HTMLInputElement;
+    searchInput.addEventListener('input', () => {
+        const filteredPokemon = pokemons.filter(pokemon =>
+            pokemon.name.toLowerCase().includes(searchInput.value.toLowerCase())
+        );
+        loadPokemon(filteredPokemon);
+    });
 }
 
 main();

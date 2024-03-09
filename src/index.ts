@@ -2,10 +2,11 @@ interface Pokemon {
   name: string;
   id: number;
   imageUrl: string;
+  type: string;
 }
 
 async function getPokemon(): Promise<Pokemon[]> {
-  const response = await fetch ("https://pokeapi.co/api/v2/pokemon/?limit=20/") // fetch data from pokeapi website
+  const response = await fetch ("https://pokeapi.co/api/v2/pokemon/?limit=1025/") // fetch data from pokeapi website
   const data = await response.json(); // convert the data to a json file
   if (!data || !data.results) {
     throw new Error("No data found") // Throw error if no data found

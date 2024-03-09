@@ -29,7 +29,7 @@ function loadPokemon(pokemons: Pokemon[]): void {
     pokemonElement.innerHTML = `
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${pokemon.id}.png" class="pokemon-sprite" alt="${pokemon.name}" />
       <div class="pokemon-name">${pokemon.name}</div>
-      <div class="pokemon-id">${pokemon.id}</div>
+      <div class="pokemon-id">#${pokemon.id}</div>
     `;
     pokedex.appendChild(pokemonElement);
   });

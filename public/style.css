@@ -27,6 +27,7 @@ h1 {
 
 .pokemon-name {
     text-align: center;
+    text-transform: capitalize;
 }
 
 .pokemon-id {
